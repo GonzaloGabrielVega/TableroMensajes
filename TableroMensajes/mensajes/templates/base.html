@@ -12,8 +12,15 @@
         <h1>TABLERO DE MENSAJES</h1>
         <nav>
             <ul>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'home' %}">INiCIO</a> </li><!-- inicio-->
                 <li><a href="{% url 'crear' %}">CREAR MENSAJES</a> </li><!-- crear mensajes-->
                 <li><a href="{% url 'mensajes' %}">VER MENSAJES</a></li><!-- ver mesnajes-->
+                <li><a href="{% url 'logout' %}">CERRAR SESION</a></li><!-- cerrar sesion-->
+                {% else %}
+                <li><a href="{% url 'login' %}">INICIAR SESION</a></li><!-- login -->
+                <li><a href="{% url 'register' %}">REGISTRARSE </a></li><!-- register -->
+                {% endif %}
             </ul>
         </nav>
     </header>

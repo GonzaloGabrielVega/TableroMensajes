@@ -1,16 +1,17 @@
 /* Paleta de colores */
 :root {
-    --color1: #aaaa91;
-    --color2: #848478;
-    --color3: #5e5e5e;
-    --color4: #383845;
-    --color5: #12122b;
+    --color1: #aaaa91; /* Fondo principal */
+    --color2: #848478; /* Fondo del contenedor */
+    --color3: #5e5e5e; /* Fondos de botones y listas */
+    --color4: #383845; /* Bordes y sombras */
+    --color5: #12122b; /* Fondo del encabezado y navegación */
 }
 
+/* Estilos generales */
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--color1);
-    color: var(--color5);
+    color: var(--color1);
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -50,7 +51,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: var(--color2);
+    color: var(--color5);
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
@@ -58,7 +59,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--color5);
+    color: var(--color1);
 }
 
 /* Contenedor Principal */
@@ -69,6 +70,7 @@ nav ul li a:hover {
     background-color: var(--color2);
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    color: var(--color5); /* Texto en color oscuro */
 }
 
 /* Botones */
@@ -109,7 +111,7 @@ form input[type="text"], form textarea {
     border: 1px solid var(--color4);
     border-radius: 5px;
     background-color: var(--color2);
-    color: var(--color5);
+    color: var(--color5); /* Texto oscuro */
 }
 
 form textarea {
