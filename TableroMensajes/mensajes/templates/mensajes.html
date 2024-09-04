@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Mensajes{% endblock %}
+
+{% block content %}
+ <h2> MIS MENSAJES </h2>
+
+ <div>
+    <h3>mensajes enviados</h3>
+    <ul> 
+        {% for mensajes in mensajes %}
+           {% if mensaje.remitente == user.username %} <!-- si el remitente es nuestro username lo toma como enviado-->
+                <li>
+                    <strong> para: </strong> {{ mensaje.destinatario }}
+                    <strong> mensaje: </strong>  {{ mensaje.mensaje }}
+                    <strong> fecha: </strong> {{ mensaje.fecha }}
+                </li>
+           {% endif %}
+        {% empty %}
+            <li> No hay mensajes para mostrar </li>
+        {% endfor %}
+    </ul>   
+ </div>
+
+ <div>
+    <h3>mensajes recibidos</h3>
+    <ul> 
+        {% for mensajes in mensajes %}
+           {% if mensaje.destinatario == user.username %} <!-- si el destinatario es nuestro username lo toma como recibido-->
+                <li>
+                    <strong> de: </strong> {{ mensaje.remitente }}
+                    <strong> mensaje: </strong>  {{ mensaje.mensaje }}
+                    <strong> fecha: </strong> {{ mensaje.fecha }}
+                    <a href="{% url '' mensaje.id %}"> eliminar mensaje</a>
+                </li>
+           {% endif %}
+        {% empty %}
+            <li> No hay mensajes para mostrar </li>
+        {% endfor %}
+    </ul>   
+ </div>
+{% endblock %}

@@ -12,3 +12,6 @@ def CrearMensajes(request):
             nuevomensaje.save()
             return redirect('home')
     return render(request, 'crear.html')        
+
+def VerMensajes(request):
+    return render(request, 'mensajes.html')
