@@ -3,39 +3,41 @@
 {% block title %}Mensajes{% endblock %}
 
 {% block content %}
-    <h2 class="centered-content">MIS MENSAJES</h2>
+    <h2 class="centered-content">Mis Mensajes</h2>
 
-    <div id="" class="mensaje-section">
-        <h3>Mensajes Enviados</h3>
-        <ul>
-            {% for mensaje in mensajes %}
-                {% if mensaje.remitente == user.username %}
-                    <li>
-                        <strong>Para:</strong> {{ mensaje.destinatario }}<br>
-                        <strong>Mensaje:</strong> {{ mensaje.mensaje }}<br>
-                        <strong>Fecha:</strong> {{ mensaje.fecha }}<br>
-                    </li>
-                {% endif %}
-            {% empty %}
-                <li>No hay mensajes enviados para mostrar.</li>
-            {% endfor %}
-        </ul>
-    </div>
+    <div class="card-container">
+        <div class="mensaje-section">
+            <h3>Mensajes Enviados</h3>
+            <ul>
+                {% for mensaje in mensajes %}
+                    {% if mensaje.remitente == user.username %}
+                        <li class="mensaje-card">
+                            <strong>Para:</strong> {{ mensaje.destinatario }}<br>
+                            <strong>Mensaje:</strong> {{ mensaje.mensaje }}<br>
+                            <strong>Fecha:</strong> {{ mensaje.fecha }}<br>
+                        </li>
+                    {% endif %}
+                {% empty %}
+                    <li>No hay mensajes enviados para mostrar.</li>
+                {% endfor %}
+            </ul>
+        </div>
 
-    <div id="" class="mensaje-section">
-        <h3>Mensajes Recibidos</h3>
-        <ul>
-            {% for mensaje in mensajes %}
-                {% if mensaje.destinatario == user.username %}
-                    <li>
-                        <strong>De:</strong> {{ mensaje.remitente }}<br>
-                        <strong>Mensaje:</strong> {{ mensaje.mensaje }}<br>
-                        <strong>Fecha:</strong> {{ mensaje.fecha }}<br>
-                    </li>
-                {% endif %}
-            {% empty %}
-                <li>No hay mensajes recibidos para mostrar.</li>
-            {% endfor %}
-        </ul>
+        <div class="mensaje-section">
+            <h3>Mensajes Recibidos</h3>
+            <ul>
+                {% for mensaje in mensajes %}
+                    {% if mensaje.destinatario == user.username %}
+                        <li class="mensaje-card">
+                            <strong>De:</strong> {{ mensaje.remitente }}<br>
+                            <strong>Mensaje:</strong> {{ mensaje.mensaje }}<br>
+                            <strong>Fecha:</strong> {{ mensaje.fecha }}<br>
+                        </li>
+                    {% endif %}
+                {% empty %}
+                    <li>No hay mensajes recibidos para mostrar.</li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 {% endblock %}
