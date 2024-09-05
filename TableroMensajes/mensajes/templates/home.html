@@ -4,7 +4,7 @@
 
 {% block content %}
     <div class="centered-content">
-        <h2>Bienvenido a la Página de Inicio</h2>
+        <h2>Bienvenido {{ user.username|upper }}</h2> 
         <div class="card-container">
             <div class="card">
                 <h1>Crear Mensaje</h1>
