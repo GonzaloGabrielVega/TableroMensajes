@@ -15,15 +15,20 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Encabezado */
 header {
     background-color: var(--color5);
     color: var(--color1);
-    padding: 20px;
+    padding: 90px;;
     text-align: center;
     border-bottom: 3px solid var(--color4);
+    display: block; 
+    height: 100px;
 }
 
 header h1 {
@@ -64,6 +69,7 @@ nav ul li a:hover {
 
 /* Contenedor Principal */
 .container {
+    flex: 1;
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
@@ -98,25 +104,32 @@ form {
     border-radius: 10px;
     border: 1px solid var(--color4);
     color: var(--color1);
+    max-width: 400px; /* Reducción del ancho máximo del formulario */
+    margin: 0 auto; /* Centrado del formulario */
+    text-align: center; /* Centrado del texto */
 }
 
 form label {
     margin-bottom: 5px;
     font-weight: bold;
+    text-align: left; /* Mantiene las etiquetas alineadas a la izquierda */
+    font-size: 0.9em; /* Reducción del tamaño de la fuente de las etiquetas */
 }
 
 form input[type="text"], form textarea {
     margin-bottom: 15px;
-    padding: 10px;
+    padding: 8px; /* Reducción del relleno de los campos */
     border: 1px solid var(--color4);
     border-radius: 5px;
     background-color: var(--color2);
     color: var(--color5); /* Texto oscuro */
+    width: 100%; /* Asegura que los campos ocupen todo el ancho disponible */
+    font-size: 0.9em; /* Reducción del tamaño de la fuente en los campos */
 }
 
 form textarea {
     resize: vertical;
-    height: 100px;
+    height: 80px; /* Ajuste de la altura del campo de texto */
 }
 
 /* Listas de Mensajes */
@@ -154,6 +167,8 @@ ul li a:hover {
 
 /* Pie de página */
 footer {
+    display: flex;
+    flex-direction: column;
     background-color: var(--color4);
     color: var(--color1);
     text-align: center;
