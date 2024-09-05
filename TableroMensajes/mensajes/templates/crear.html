@@ -2,16 +2,22 @@
 
 {% block title %} Crear Mensaje {% endblock %}
 
-{% block content %} 
-    <h2 class="centered-content"> Crear mensaje</h2>
-    <form method="post">
-        {% csrf_token %}
-        <label for="destinatario">Destinatario</label>
-        <input type="text" name="destinatario" id="destinatario">
-
-        <label for="mensaje">Mensaje</label>
-        <textarea name="mensaje" id="mensaje" required></textarea>
-        <button type="submit">Enviar</button>
-
-    </form>
+{% block content %}
+    <div class="centered-content">
+        <h2>Crear un Nuevo Mensaje</h2>
+        <div class="form-container">
+            <div class="form">
+                <form action="{% url 'crear' %}" method="post">
+                    {% csrf_token %}
+                    <label for="destinatario">Para:</label>
+                    <input type="text" id="destinatario" name="destinatario" required>
+                    
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+                    
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}

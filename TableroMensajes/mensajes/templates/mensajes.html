@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 
-{% block title %}Mensajes{% endblock %}
+{% block title %} Mensajes {% endblock %}
 
 {% block content %}
-    <h2 class="centered-content">Mis Mensajes</h2>
+    
+<div class="centered-content">
+    <h2>Mis Mensajes</h2>
+</div>
 
-    <div class="card-container">
+    <div class="mensaje-container">
         <div class="mensaje-section">
-            <h3>Mensajes Enviados</h3>
-            <ul>
+            <h3 class="centered-content">Mensajes Enviados</h3>
+            <ul class="centered-content">
                 {% for mensaje in mensajes %}
                     {% if mensaje.remitente == user.username %}
                         <li class="mensaje-card">
@@ -24,8 +27,8 @@
         </div>
 
         <div class="mensaje-section">
-            <h3>Mensajes Recibidos</h3>
-            <ul>
+            <h3 class="centered-content">Mensajes Recibidos</h3>
+            <ul class="centered-content">
                 {% for mensaje in mensajes %}
                     {% if mensaje.destinatario == user.username %}
                         <li class="mensaje-card">
