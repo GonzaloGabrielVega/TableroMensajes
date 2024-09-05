@@ -232,8 +232,8 @@ button[type="submit"]:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 400px;
-    margin: 0 auto;
+    max-width:500px;
+    margin: 0 auto 100px auto;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -241,13 +241,16 @@ button[type="submit"]:hover {
 }
 
 .auth form {
-    width: 90%;
+    width: 90%;   
 }
 
-.auth form p {
-    margin-bottom: 15px;
+.auth form p{
+    color: var(--color-naranja);
 }
-
+.auth form li {
+    color: var(--color-naranja);
+    list-style-type: none;
+}
 .auth button {
     background-color: var(--color-claro);
     border: none;
