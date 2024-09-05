@@ -8,4 +8,5 @@ urlpatterns = [
     path('mensajes/', views.VerMensajes, name='mensajes'),
     path('register/', views.register, name='register'),
     path('logout/', views.user_logout, name='logout'),
+    path('eliminar/<int:mensaje_id>/', views.EliminarMensaje, name='eliminar'),
 ]

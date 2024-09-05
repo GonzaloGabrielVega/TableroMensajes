@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from .models import Mensaje
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
@@ -51,3 +51,9 @@ def CrearMensajes(request):
 def VerMensajes(request):
     mensajes = Mensaje.objects.filter(remitente=request.user.username) | Mensaje.objects.filter(destinatario=request.user.username)
     return render(request, 'mensajes.html', {'mensajes': mensajes})
+
+def EliminarMensaje(request, mensaje_id):
+    mensaje = get_object_or_404(Mensaje, id = mensaje_id)
+    if mensaje.remitente == request.user.username or mensaje.destinatario == request.user.username:
+        mensaje.delete
+    return redirect('mensajes')
