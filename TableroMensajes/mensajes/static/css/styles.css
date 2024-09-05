@@ -1,17 +1,15 @@
 /* Paleta de colores */
 :root {
-    --color1: #aaaa91; /* Fondo principal */
-    --color2: #848478; /* Fondo del contenedor */
-    --color3: #5e5e5e; /* Fondos de botones y listas */
-    --color4: #383845; /* Bordes y sombras */
-    --color5: #12122b; /* Fondo del encabezado y navegación */
+    --color-orange: #ff6f00; /* Tono naranja */
+    --color-dark: #333333;   /* Tono oscuro */
+    --color-light: #f4f4f4;  /* Color claro para el texto sobre fondos oscuros */
 }
 
 /* Estilos generales */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--color1);
-    color: var(--color1);
+    background-color: var(--color-light); /* Fondo claro */
+    color: var(--color-dark); /* Texto oscuro */
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -22,12 +20,11 @@ body {
 
 /* Encabezado */
 header {
-    background-color: var(--color5);
-    color: var(--color1);
-    padding: 90px;;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: 20px;
     text-align: center;
-    border-bottom: 3px solid var(--color4);
-    display: block; 
+    border-bottom: 3px solid var(--color-orange);
     height: 100px;
 }
 
@@ -36,10 +33,20 @@ header h1 {
     font-size: 2.5em;
 }
 
+h2 {
+    margin-left: 20px;
+    color: var(--color-orange);
+}
+
+p {
+    color: var(--color-light);
+    margin-left: 20px;
+}
+
 /* Navegación */
 nav {
-    background-color: var(--color5);
-    color: var(--color1);
+    background-color: var(--color-dark);
+    color: var(--color-light);
     padding: 10px 0;
 }
 
@@ -56,7 +63,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: var(--color5);
+    color: var(--color-light); /* Enlaces en color claro */
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
@@ -64,7 +71,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--color1);
+    color: var(--color-orange); /* Color naranja para el hover */
 }
 
 /* Contenedor Principal */
@@ -73,16 +80,16 @@ nav ul li a:hover {
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
-    background-color: var(--color2);
+    background-color: var(--color-dark);
+    color: var(--color-light); /* Texto en color claro */
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    color: var(--color5); /* Texto en color oscuro */
 }
 
 /* Botones */
 button {
-    background-color: var(--color3);
-    color: var(--color1);
+    background-color: var(--color-orange);
+    color: var(--color-light);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -92,69 +99,70 @@ button {
 }
 
 button:hover {
-    background-color: var(--color4);
+    background-color: #e65c00; /* Naranja más oscuro */
 }
 
 /* Formularios */
 form {
     display: flex;
     flex-direction: column;
-    background-color: var(--color3);
+    background-color: var(--color-dark);
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid var(--color4);
-    color: var(--color1);
-    max-width: 400px; /* Reducción del ancho máximo del formulario */
-    margin: 0 auto; /* Centrado del formulario */
-    text-align: center; /* Centrado del texto */
+    border: 1px solid var(--color-orange);
+    color: var(--color-light);
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
 }
 
 form label {
     margin-bottom: 5px;
     font-weight: bold;
-    text-align: left; /* Mantiene las etiquetas alineadas a la izquierda */
-    font-size: 0.9em; /* Reducción del tamaño de la fuente de las etiquetas */
+    text-align: left;
+    font-size: 0.9em;
 }
 
 form input[type="text"], form textarea {
     margin-bottom: 15px;
-    padding: 8px; /* Reducción del relleno de los campos */
-    border: 1px solid var(--color4);
+    padding: 8px;
+    border: 1px solid var(--color-orange);
     border-radius: 5px;
-    background-color: var(--color2);
-    color: var(--color5); /* Texto oscuro */
-    width: 100%; /* Asegura que los campos ocupen todo el ancho disponible */
-    font-size: 0.9em; /* Reducción del tamaño de la fuente en los campos */
+    background-color: var(--color-light);
+    color: var(--color-dark); /* Texto oscuro */
+    width: auto;
+    font-size: 0.9em;
 }
 
 form textarea {
     resize: vertical;
-    height: 80px; /* Ajuste de la altura del campo de texto */
+    height: 80px;
 }
 
 /* Listas de Mensajes */
-ul {
+.mensaje-section {
+    background: var(--color-orange);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px 20px;
+}
+
+.mensaje-section ul {
     list-style-type: none;
     padding: 0;
 }
 
-ul li {
-    margin-bottom: 10px;
-    padding: 15px;
-    background-color: var(--color3);
-    color: var(--color1);
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+.mensaje-section li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
 }
 
-ul li strong {
-    display: block;
-    font-weight: bold;
-}
 
 /* Enlaces en las listas */
 ul li a {
-    color: var(--color1);
+    color: var(--color-orange); /* Enlaces en color naranja */
     text-decoration: none;
     font-weight: bold;
     margin-top: 10px;
@@ -162,21 +170,79 @@ ul li a {
 }
 
 ul li a:hover {
-    color: var(--color4);
+    color: var(--color-light); /* Color claro para el hover */
 }
 
 /* Pie de página */
 footer {
     display: flex;
     flex-direction: column;
-    background-color: var(--color4);
-    color: var(--color1);
+    background-color: var(--color-dark);
+    color: var(--color-light);
     text-align: center;
     padding: 20px;
     margin-top: 20px;
-    border-top: 3px solid var(--color2);
+    border-top: 3px solid var(--color-orange);
 }
 
 footer p {
     margin: 0;
+}
+
+/* Tarjetas */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: var(--color-dark);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3 {
+    color: var(--color-orange);
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 20px;
+}
+
+.card .btn {
+    text-decoration: none;
+    color: var(--color-light); /* Texto blanco en los botones */
+    background-color: var(--color-orange);
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.card .btn:hover {
+    background-color: #e65c00; /* Naranja más oscuro */
+}
+
+.centered-content {
+    text-align: center; /* Centra el texto */
+    margin-top: 20px; /* Añade un margen superior si es necesario */
+}
+
+.centered-content h2 {
+    font-size: 2em;
+    color: var(--color-orange); 
+}
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px; /* Añade un margen superior si es necesario */
 }

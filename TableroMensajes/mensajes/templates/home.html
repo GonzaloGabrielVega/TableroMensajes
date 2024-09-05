@@ -1,7 +1,21 @@
 {% extends 'base.html' %}
 
-{% block title %} INICIO {% endblock %}
+{% block title %} Inicio {% endblock %}
 
-{% block content%}
-<h2>Este es el inicio, seleccione alguna opcion!</h2>
+{% block content %}
+    <div class="centered-content">
+        <h2>Bienvenido a la Página de Inicio</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Ver Mensajes</h3>
+                <p>Consulta tus mensajes enviados y recibidos.</p>
+                <a href="{% url 'mensajes' %}" class="btn">Ir a Mensajes</a>
+            </div>
+            <div class="card">
+                <h3>Crear Mensaje</h3>
+                <p>Redacta y envía un nuevo mensaje.</p>
+                <a href="{% url 'crear' %}" class="btn">Crear Mensaje</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

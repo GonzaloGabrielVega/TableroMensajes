@@ -49,4 +49,5 @@ def CrearMensajes(request):
 
 @login_required
 def VerMensajes(request):
-    return render(request, 'mensajes.html')
+    mensajes = Mensaje.objects.filter(remitente=request.user.username) | Mensaje.objects.filter(destinatario=request.user.username)
+    return render(request, 'mensajes.html', {'mensajes': mensajes})

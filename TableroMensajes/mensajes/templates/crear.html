@@ -3,5 +3,15 @@
 {% block title %} Crear Mensaje {% endblock %}
 
 {% block content %} 
- <a href=""> hola aca se crean los mensajes</a>
+    <h2 class="centered-content"> Crear mensaje</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="destinatario">Destinatario</label>
+        <input type="text" name="destinatario" id="destinatario">
+
+        <label for="mensaje">Mensaje</label>
+        <textarea name="mensaje" id="mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+
+    </form>
 {% endblock %}
