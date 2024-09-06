@@ -52,8 +52,20 @@ def VerMensajes(request):
     mensajes = Mensaje.objects.filter(remitente=request.user.username) | Mensaje.objects.filter(destinatario=request.user.username)
     return render(request, 'mensajes.html', {'mensajes': mensajes})
 
+""" @login_required
 def EliminarMensaje(request, mensaje_id):
     mensaje = get_object_or_404(Mensaje, id = mensaje_id)
-    if mensaje.remitente == request.user.username or mensaje.destinatario == request.user.username:
+    if request.method == "POST": # Se cambio el metodo utilizado para asegurar la eliminacion
         mensaje.delete
     return redirect('mensajes')
+ """
+
+@login_required
+def EliminarMensaje(request, id):
+    mensaje = get_object_or_404(Mensaje, id=id) # Se cambio mensaje_id por id
+
+    if request.method == 'POST':
+        mensaje.delete()  
+        return redirect('mensajes')  
+
+    return redirect('mensajes')  # Si no es POST, redirigir igualmente
