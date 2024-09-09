@@ -8,7 +8,7 @@
     <div class="auth">
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }} <!-- modificar el form para que el input de password quede esteticamente mejor -->
+            {{ form.as_p }} <!-- modificar el form para que el input de password quede esteticamente mejor -> actualizacion: no se pudo -->
             <p></p>
             <button type="submit">{% if is_login %}Iniciar Sesión{% else %}Registrarse{% endif %}</button>
         </form>
